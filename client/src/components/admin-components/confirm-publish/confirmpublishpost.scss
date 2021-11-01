@@ -1,0 +1,31 @@
+@import "../../../global.scss";
+
+.publish-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  @include glass;
+  padding: 20px;
+  width: 350px;
+  height: 140px;
+  font-size: 90%;
+  @include mobile {
+    font-size: 80%;
+    width: 300px;
+    height: 130px;
+  }
+  div {
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+    button {
+      background-color: rgb(97, 62, 224);
+      color: white;
+      padding: 8px;
+      background-color: $mainColor;
+      border-radius: 3px;
+      border: none;
+    }
+  }
+}

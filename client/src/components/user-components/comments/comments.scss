@@ -1,0 +1,41 @@
+@import "../../../global.scss";
+
+.comment-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .comment-body {
+    color: white;
+    margin: 5px;
+    font-weight: 500;
+    width: 50%;
+    background: rgba(19, 5, 221, 0.6);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.3px);
+    -webkit-backdrop-filter: blur(10.3px);
+    border: 1px solid rgba(230, 214, 214, 0.31);
+    padding: 8px;
+    @include mobile {
+      width: 268px;
+      height: 100px;
+    }
+    .comment-top {
+      display: flex;
+      width: 40%;
+      justify-content: space-around;
+    }
+    h4 {
+      font-weight: 800;
+      padding: 5px;
+    }
+    h6 {
+      color: black;
+    }
+    p {
+      padding-bottom: 20px;
+      margin-top: 0px;
+    }
+  }
+}

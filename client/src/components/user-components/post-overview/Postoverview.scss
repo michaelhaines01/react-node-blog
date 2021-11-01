@@ -1,0 +1,31 @@
+@import "../../../global.scss";
+.post-card {
+  /* From https://css.glass */
+  @include glass;
+  z-index: 1;
+  margin: 25px;
+  width: 400px;
+  height: 360px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  @include mobile {
+    width: 400px;
+    font-size: 70%;
+    height: 280px;
+  }
+  button {
+    padding: 8px;
+    background-color: rgb(97, 62, 224);
+    border-radius: 3px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 25px;
+    @include mobile {
+      font-size: 90%;
+    }
+  }
+}

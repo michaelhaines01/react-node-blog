@@ -1,0 +1,60 @@
+@import "../../../global.scss";
+
+.admin-body-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+
+  .admin-posts {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 80%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 5em;
+    @include mobile {
+      width: 100%;
+    }
+
+    &.active {
+      display: none;
+    }
+
+    .admin-post-card {
+      @include glass;
+      z-index: 1;
+      margin: 25px;
+      width: 400px;
+      height: 360px;
+      padding: 25px;
+      @include mobile {
+        width: 400px;
+        font-size: 70%;
+        height: 280px;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 40px;
+        button {
+          padding: 6px;
+          background-color: rgb(97, 62, 224);
+          border-radius: 3px;
+          color: white;
+          border: none;
+          cursor: pointer;
+          width: 20%;
+          @include mobile {
+            font-size: 80%;
+          }
+        }
+      }
+    }
+  }
+}

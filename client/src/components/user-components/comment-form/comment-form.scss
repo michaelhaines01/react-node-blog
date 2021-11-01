@@ -1,0 +1,46 @@
+@import "../../../global.scss";
+
+.commentForm-container {
+  width: 47%;
+  background: rgba(160, 157, 157, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(134, 133, 133, 0.1);
+  backdrop-filter: blur(10.3px);
+  -webkit-backdrop-filter: blur(10.3px);
+  border: 1px solid rgba(230, 214, 214, 0.31);
+  margin-top: 05px;
+  padding: 20px;
+
+  @include mobile {
+    width: 268px;
+    height: 140px;
+  }
+  .form-body {
+    @include mobile {
+      font-size: 70%;
+    }
+    h2 {
+      text-align: left;
+      margin-top: -5px;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    label {
+      text-align: left;
+    }
+    input {
+      border: none;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 8px;
+      background-color: rgb(97, 62, 224);
+      border-radius: 3px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+  }
+}

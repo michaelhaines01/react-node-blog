@@ -1,0 +1,58 @@
+@import "../../../global.scss";
+
+.adminBody-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  .form-container {
+    padding: 10px;
+    display: flex;
+    margin: 6%;
+    width: 50%;
+    height: 30%;
+    @include glass;
+    margin-top: 18%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @include mobile {
+      font-size: 80%;
+      margin-top: 120px;
+      width: 280px;
+      height: 220px;
+    }
+    &.active {
+      display: none;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      height: 100%;
+      justify-content: space-evenly;
+      input {
+        border: none;
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+      h6 {
+        color: red;
+        margin-top: 0;
+        font-size: 15px;
+      }
+      button {
+        padding: 8px;
+        background-color: $mainColor;
+        border-radius: 3px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-top: -10px;
+        margin-bottom: 22px;
+      }
+    }
+  }
+}
