@@ -1,44 +1,32 @@
 {
-  "name": "blog-app",
-  "version": "0.1.0",
+  "name": "blog",
+  "version": "0.0.0",
   "private": true,
-  "proxy": "http://localhost:3000",
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "date-fns": "^2.25.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-lazyload": "^3.2.0",
-    "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
-    "sass": "^1.43.2",
-    "web-vitals": "^1.0.1"
-  },
   "scripts": {
-    "start-client": "react-scripts start",
-    "start": "cd server && npm run start",
-    "build": "react-scripts build && (cd server && npm install)",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start-client": " cd client && npm run start",
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www ",
+    "build": "cd client && npm install && npm run build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "async": "^3.2.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.13.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.9",
+    "morgan": "~1.9.1",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  },
+  "engines": {
+    "node": "v14.15.1"
   }
 }
