@@ -11,11 +11,11 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/home">
             <Topbar />
             <Homepage />
           </Route>
-          <Route exact path="/admin">
+          <Route exact path="/login">
             <AuthProvider>
               <AdminTopbar />
             </AuthProvider>
