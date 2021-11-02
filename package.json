@@ -5,8 +5,10 @@
   "scripts": {
     "start-client": " cd client && npm run start",
     "start": "node ./bin/www",
-    "devstart": "nodemon ./bin/www ",
-    "build": "cd client && npm install && npm run build"
+    "devstart": "nodemon ./bin/www",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build"
   },
   "dependencies": {
     "async": "^3.2.1",
