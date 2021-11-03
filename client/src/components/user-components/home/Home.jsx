@@ -3,13 +3,15 @@ import Post from "../post/Post";
 import "./home.scss";
 import Header from "../header/Header";
 import Postoverview from "../post-overview/Postoverview";
-
+import baseURL from "../../../config.js";
 function Homepage() {
   const [posts, setposts] = useState([]);
   const [showHide, setshowHide] = useState(false);
   const [post, setPost] = useState({ showPost: false, Post: {} });
   useEffect(() => {
-    fetch("/posts").then((res) => res.json().then((posts) => setposts(posts)));
+    fetch(`${baseURL}/blog/posts`).then((res) =>
+      res.json().then((posts) => setposts(posts))
+    );
   }, []);
 
   return (

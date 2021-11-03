@@ -5,6 +5,7 @@ const { body, validationResult } = require("express-validator");
 exports.getPosts = (req, res, next) => {
   Posts.find({ published: true }).exec((err, posts) => {
     if (err) {
+      console.log("here");
       return next(err);
     }
     return res.json(posts);

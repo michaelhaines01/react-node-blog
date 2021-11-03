@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import Commentform from "../comment-form/Commentform";
 import "./comments.scss";
 import Formatdate from "../../format-date/Formatdate";
+import baseURL from "../../../config.js";
 export default function Comments(props) {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState(false);
 
   useEffect(() => {
-    fetch(`/posts/${props.id}/comments`).then((res) =>
+    fetch(`${baseURL}/blog/posts/${props.id}/comments`).then((res) =>
       res.json().then((comments) => setComments(comments))
     );
   }, [newComment, props.id]);

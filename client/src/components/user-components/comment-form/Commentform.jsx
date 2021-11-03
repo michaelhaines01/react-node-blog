@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./comment-form.scss";
+import baseURL from "../../../config.js";
 export default function CommentForm({ id, setnewComment }) {
   const [comment, setComment] = useState({ username: "", content: "" });
 
@@ -11,7 +12,7 @@ export default function CommentForm({ id, setnewComment }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(comment),
     };
-    fetch(`/posts/${id}/comments`, requestOptions)
+    fetch(`${baseURL}//blog/posts/${id}/comments`, requestOptions)
       .then((response) => response.json())
       .then(() => setnewComment((prevCheck) => !prevCheck))
       .then(() => {

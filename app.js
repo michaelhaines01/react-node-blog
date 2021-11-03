@@ -27,11 +27,9 @@ app.use(cookieParser());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-app.get("*", (req, res) => {
-  res.sendFile(path.join("client/build", "index.html"));
-});
+// this makes react serve the build version of react
+app.use(express.static(path.join(__dirname, "client", "build")));
 
-///app.use(express.static(path.resolve(__dirname, "../client/build")));
 //Passport middleware
 app.use(passport.initialize());
 
@@ -43,9 +41,12 @@ app.use("/blog", indexRouter);
 //Authentication
 app.use("/auth", authRouter);
 app.use("/admin", adminRouter);
-
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
 // error handler
 app.use(function (err, req, res, next) {
+  console.log(err);
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
   // render the error page

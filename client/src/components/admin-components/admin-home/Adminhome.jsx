@@ -6,6 +6,7 @@ import { AuthContext } from "../../../GlobalStates";
 import ConfirmPublish from "../confirm-publish/ConfirmPublishPost";
 import "./Adminhome.scss";
 import Formatdate from "../../format-date/Formatdate";
+import baseURL from "../../../config.js";
 function Admin({ createPost, setCreatePost, showHide, setshowHide }) {
   const [userAuth] = useContext(AuthContext);
   const [posts, setPosts] = useState([]);
@@ -27,7 +28,7 @@ function Admin({ createPost, setCreatePost, showHide, setshowHide }) {
       method: "GET",
       headers: { "Authorization": `${userAuth.token}` },
     };
-    fetch("/admin/", requestOptions)
+    fetch(`${baseURL}/admin`, requestOptions)
       .then((res) => res.json())
       .then((posts) => setPosts(posts));
   }, [edit, createPost, confirmDelete, confirmPublish]);
