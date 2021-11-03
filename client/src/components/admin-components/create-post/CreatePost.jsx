@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../../../GlobalStates";
 import "./CreatePost.scss";
+import baseURL from "../../../config.js";
 export default function CreatePost({ setshowHide, setCreatePost }) {
   const [userAuth] = useContext(AuthContext);
   const [post, setPost] = useState({
@@ -20,7 +21,9 @@ export default function CreatePost({ setshowHide, setCreatePost }) {
       },
       body: JSON.stringify(post),
     };
-    fetch(`/admin/create/`, requestOptions).then((response) => response.json());
+    fetch(`${baseURL}/admin/create/`, requestOptions).then((response) =>
+      response.json()
+    );
     setshowHide(false);
     setCreatePost(false);
   };

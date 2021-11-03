@@ -18,7 +18,7 @@ export default function AdminTopbar() {
         }}
       >
         <h4>Create</h4>
-        <a href="/admin" className="logo">
+        <a href="/login" className="logo">
           <h4>Logout</h4>
         </a>
       </div>

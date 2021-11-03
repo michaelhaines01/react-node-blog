@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 
 import { AuthContext } from "../../../GlobalStates";
 import "./edit-post-form.scss";
+import baseURL from "../../../config.js";
 export default function Editpost({ edit, setEdit, setshowHide }) {
   const [userAuth] = useContext(AuthContext);
   const [post, setPost] = useState({
@@ -19,8 +20,8 @@ export default function Editpost({ edit, setEdit, setshowHide }) {
       },
       body: JSON.stringify(post),
     };
-    fetch(`admin/edit/${edit.post._id}`, requestOptions).then((res) =>
-      console.log(res.json())
+    fetch(`${baseURL}/admin/edit/${edit.post._id}`, requestOptions).then(
+      (res) => console.log(res.json())
     );
     setshowHide(false);
     setEdit((prevState) => ({

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../GlobalStates";
 import "./admin-login.scss";
-
+import baseURL from "../../../config.js";
 export default function Adminlogin() {
   const [userAuth, setuserAuth] = useContext(AuthContext);
 
@@ -16,7 +16,7 @@ export default function Adminlogin() {
         password: e.target.password.value,
       }),
     };
-    fetch("/auth/login", requestOptions)
+    fetch(`${baseURL}/auth/login`, requestOptions)
       .then((res) => res.json())
       .then((res) =>
         setuserAuth({
