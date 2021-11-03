@@ -1,3 +1,3 @@
-const baseURL = "http://localhost:5000";
+const baseURL = "https://blog-react-node123.herokuapp.com";
 
 export default baseURL;
