@@ -27,6 +27,9 @@ app.use(cookieParser());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+app.get("*", (req, res) => {
+  res.sendFile(path.join("client/build", "index.html"));
+});
 
 ///app.use(express.static(path.resolve(__dirname, "../client/build")));
 //Passport middleware
@@ -36,7 +39,7 @@ const indexRouter = require("./routes/index");
 const adminRouter = require("./routes/admin");
 const authRouter = require("./routes/auth");
 
-app.use("/", indexRouter);
+app.use("/blog", indexRouter);
 //Authentication
 app.use("/auth", authRouter);
 app.use("/admin", adminRouter);
