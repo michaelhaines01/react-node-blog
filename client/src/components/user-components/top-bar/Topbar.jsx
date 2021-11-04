@@ -9,6 +9,9 @@ export default function Topbar() {
             Blog
           </a>
         </div>
+        <div className="right">
+          <a href="/login">Login</a>
+        </div>
       </div>
     </div>
   );

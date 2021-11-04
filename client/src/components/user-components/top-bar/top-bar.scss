@@ -14,7 +14,9 @@
   .wrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-left: 20px;
+    width: 100%;
 
     .left {
       display: flex;
@@ -27,6 +29,16 @@
         @include mobile {
           font-size: 1.8rem;
         }
+      }
+    }
+    .right {
+      padding: 10px;
+      width: 10%;
+
+      a {
+        font-size: 1rem;
+        color: white;
+        text-decoration: none;
       }
     }
   }
