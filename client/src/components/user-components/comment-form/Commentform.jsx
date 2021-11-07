@@ -12,7 +12,7 @@ export default function CommentForm({ id, setnewComment }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(comment),
     };
-    fetch(`${baseURL}//blog/posts/${id}/comments`, requestOptions)
+    fetch(`${baseURL}/blog/posts/${id}/comments`, requestOptions)
       .then((response) => response.json())
       .then(() => setnewComment((prevCheck) => !prevCheck))
       .then(() => {
