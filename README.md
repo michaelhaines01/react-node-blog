@@ -21,5 +21,8 @@
  * React
  * SASS
 
+## View Live Website
+To open link below in new tab, please CTRL+click (on Windows and Linux) or CMD+click (on MacOS).
+
 [Hosted on Heroku](https://blog-react-node123.herokuapp.com/)
 
